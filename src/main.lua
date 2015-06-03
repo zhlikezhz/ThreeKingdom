@@ -1,4 +1,3 @@
-
 cc.FileUtils:getInstance():setPopupNotify(false)
 cc.FileUtils:getInstance():addSearchPath("src/")
 cc.FileUtils:getInstance():addSearchPath("res/")
@@ -14,3 +13,4 @@ local status, msg = xpcall(main, __G__TRACKBACK__)
 if not status then
     print(msg)
 end
+

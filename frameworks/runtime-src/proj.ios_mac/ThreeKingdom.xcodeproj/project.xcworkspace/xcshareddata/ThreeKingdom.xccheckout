@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F4AE0D1A-A371-43D8-A0F2-A79AB9955B70</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ThreeKingdom</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>68AEABD3C6C6368E62BC0C991B9B52700845D7EE</key>
+		<string>https://github.com/zhlikezhz/ThreeKingdom.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>frameworks/runtime-src/proj.ios_mac/ThreeKingdom.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>68AEABD3C6C6368E62BC0C991B9B52700845D7EE</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zhlikezhz/ThreeKingdom.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>68AEABD3C6C6368E62BC0C991B9B52700845D7EE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>68AEABD3C6C6368E62BC0C991B9B52700845D7EE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ThreeKingdom</string>
+		</dict>
+	</array>
+</dict>
+</plist>
