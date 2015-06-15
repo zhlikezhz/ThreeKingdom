@@ -2,15 +2,19 @@ cc.FileUtils:getInstance():setPopupNotify(false)
 cc.FileUtils:getInstance():addSearchPath("src/")
 cc.FileUtils:getInstance():addSearchPath("res/")
 
-require "config"
-require "cocos.init"
+require "init"
 
 local function main()
-    require("app.MyApp"):create():run()
+end
+
+local function __G__TRACKBACK__(msg)
+	local detailMsg = "---------------------------------------\n"
+    detailMsg = detailMsg .. "LUA ERROR: " .. tostring(msg) .. "\n"
+    detailMsg = detailMsg .. debug.traceback() .. "\n"
+    detailMsg = detailMsg .. "---------------------------------------"
+    print(detailMsg)
+    return msg
 end
 
 local status, msg = xpcall(main, __G__TRACKBACK__)
-if not status then
-    print(msg)
-end
-
+if not status then print(msg) end

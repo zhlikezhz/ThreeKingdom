@@ -1,18 +1,14 @@
-function printUntable(...)
-    local str = ""
-    local args = {...}
-    for _,value in pairs(args) do
-        str = str .. "|" .. tostring(value)
-    end
-    
-    print(str)
+
+
+local function printUntable(val)
+    print(tostring(val))
 end
 
-function printTable( t, indent )
+local function printTable( t, indent )
     local print = printUntable
     indent = indent or 1
     local pre = string.rep("\t", indent)
-    for k,v in pairs(t) do
+    for k, v in pairs(t) do
         if type(v) == "table" then
             if type(k) == "number" then
                 print(pre .. "[" .. k .. "]" .. " = {")
@@ -73,12 +69,15 @@ function printTable( t, indent )
     end
 end
 
-function logging(...)
+function printLog(...)
     local args = {...}
-
-    if(type(args[1]) == "table")then
-       printTable(args[1])
-    else
-       printUntable(...)
+    for key, val in pairs(args) do
+        if(type(val) == "table") then
+            print("table = {")
+            printTable(val)
+            print("}")
+        else
+            printUntable(val)
+        end
     end
 end

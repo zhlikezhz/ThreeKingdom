@@ -2,7 +2,7 @@ local EventMgr = {}
 
 function EventMgr:init()
 	self.registerMap = {}
-	local eventEnum = require("common/enums/EventEnum")
+	local eventEnum = require("class.common.enums.EventEnum")
 	for key, val in pairs(eventEnum) do
 		self.registerMap[val] = {}
 	end
