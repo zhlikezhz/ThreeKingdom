@@ -1,5 +1,5 @@
 
-local scheduler = require(cc.PACKAGE_NAME .. ".scheduler")
+local scheduler = require("quick.scheduler")
 
 --[[--
 
@@ -19,8 +19,8 @@ local Timer = {}
 ]]
 function Timer.new()
     local timer = {}
-    cc(timer):addComponent("components.behavior.EventProtocol"):exportMethods()
-
+    local event = require("helper.Event").new()
+    event:bind(timer)
     ----
 
     local handle     = nil

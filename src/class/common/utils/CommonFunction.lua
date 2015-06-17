@@ -24,16 +24,17 @@ end
 -- 读取*.csb或.json后缀的ccs文件
 commfunc.readCCSFile = function(filename, csbCacheFlag)
     local node = nil
+    csbCacheFlag = csbCacheFlag or false
     local filetype = commfunc.splitString(filename, "%.")
 
     if(filetype[2] == "csb")then
-        if csbCacheFlag then
-            node = CCSTemplateCache:getInstance():create(name)
-        else
-            node = cc.CSLoader:createNode(name)
-        end
-    elseif(filetype[2] == "json")
-        node = ccs.GUIReader:getInstance():widgetFromJsonFile(name)
+        -- if csbCacheFlag then
+        --     node = CCSTemplateCache:getInstance():create(filename)
+        -- else
+            node = cc.CSLoader:createNode(filename)
+        -- end
+    elseif(filetype[2] == "json") then
+        node = ccs.GUIReader:getInstance():widgetFromJsonFile(filename)
     else
         printLog(string.format("[error] : read ccs file [%s]", filename))
         error(string.format("[error] : read ccs file [%s]", filename))
@@ -44,7 +45,7 @@ end
 
 commfunc.loadCCSFile = function(filename, nodeMapList)
     local view = {}
-    local view.panel = commfunc.readCCSFile(filename)
+    view.panel = commfunc.readCCSFile(filename)
     for key, val in pairs(nodeMapList) do
         local node = view.panel
         local nodeNameList = commfunc.splitString(val, "%.")
