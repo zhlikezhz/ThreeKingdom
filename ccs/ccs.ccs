@@ -1,0 +1,21 @@
+<Solution>
+  <PropertyGroup Name="ccs" Version="2.2.6.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="Common" />
+        <Folder Name="LoginLayer">
+          <Project Name="LoginLayer.csd" Type="Layer" />
+          <Image Name="ppsg_login_0.png" />
+          <Image Name="ppsg_login_1.png" />
+          <Image Name="ppsg_login_2.png" />
+          <Image Name="ppsg_login_3.png" />
+          <Image Name="ppsg_login_4.png" />
+          <Image Name="ppsg_login_5.png" />
+          <Image Name="start_9.png" />
+        </Folder>
+        <Project Name="TestScene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

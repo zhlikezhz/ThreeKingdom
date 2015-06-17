@@ -1,5 +1,5 @@
 local LoginView = class("LoginView", function()
-	return ccui.Widget:create()
+	return require("class.ui.views.BaseView").new()
 end)
 
 function LoginView:ctor()
@@ -7,6 +7,7 @@ function LoginView:ctor()
 end
 
 function LoginView:_init()
+	
 end
 
 return LoginView
