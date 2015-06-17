@@ -17,15 +17,5 @@ function LoginView:_init()
 	self:addChild(view.panel)
 end
 
-function LoginView:onEnter()
-	printLog("Enter %s!!!", self.__cname)
-end
-
-function LoginView:onExit()
-	printLog("Exit %s!!!!", self.__cname)
-	if(app.getDebugFlag()) then
-		package.loaded[self.__cname] = nil
-	end
-end
 
 return LoginView
