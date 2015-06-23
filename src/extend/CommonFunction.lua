@@ -46,6 +46,7 @@ end
 commfunc.loadCCSFile = function(filename, nodeMapList)
     local view = {}
     view.panel = commfunc.readCCSFile(filename)
+    commfunc.panelAdapter(view.panel)
     for key, val in pairs(nodeMapList) do
         local node = view.panel
         local nodeNameList = commfunc.splitString(val, "%.")
@@ -87,6 +88,78 @@ commfunc.uiExtend = function(widget)
         for i,v in pairs(WidgetEx) do
             widget[i] = v
         end
+    end
+end
+
+commfunc.panelAdapter = function(panel)
+    local winSize = cc.Director:getInstance():getWinSize()
+    -- local platform_scale = getPlatformScale()
+    local platform_scale = 1.0
+
+    local panel = panel or ccs.GUIReader:getInstance():widgetFromJsonFile(panel)
+    panel:setTag(1)
+
+    local downPanel = panel:getChildByName("down")
+    if(downPanel) then 
+        downPanel:setAnchorPoint(cc.p(0.5, 0))
+        downPanel:setScale(platform_scale)
+        downPanel:setPosition(cc.p(winSize.width / 2, 0)) 
+    end
+
+    local upPanel = panel:getChildByName("up")
+    if(upPanel) then 
+        upPanel:setAnchorPoint(cc.p(0.5, 1))
+        upPanel:setScale(platform_scale)
+        upPanel:setPosition(cc.p(winSize.width/2, winSize.height)) 
+    end
+
+    local leftPanel = panel:getChildByName("left")        
+    if(leftPanel) then 
+        leftPanel:setAnchorPoint(cc.p(0,0.5))
+        leftPanel:setScale(platform_scale)
+        leftPanel:setPosition(cc.p(0,winSize.height/2)) 
+    end
+
+    local rightPanel = panel:getChildByName("right")
+    if(rightPanel) then 
+        rightPanel:setAnchorPoint(cc.p(1,0.5))
+        rightPanel:setScale(platform_scale)
+        rightPanel:setPosition(cc.p(winSize.width ,winSize.height/2 )) 
+    end
+
+    local centerPanel = panel:getChildByName("center")
+    if(centerPanel) then 
+        centerPanel:setAnchorPoint(cc.p(0.5,0.5))
+        centerPanel:setScale(platform_scale)
+        centerPanel:setPosition(cc.p(winSize.width/2,winSize.height/2)) 
+    end
+
+    local left_down_panel = panel:getChildByName("left_down")
+    if(left_down_panel) then 
+        left_down_panel:setAnchorPoint(cc.p(0,0))
+        left_down_panel:setScale(platform_scale)
+        left_down_panel:setPosition(cc.p(0,0)) 
+    end
+
+    local right_down_panel = panel:getChildByName("right_down")
+    if(right_down_panel) then 
+        right_down_panel:setAnchorPoint(cc.p(1,0))
+        right_down_panel:setScale(platform_scale)
+        right_down_panel:setPosition(cc.p(winSize.width,0)) 
+    end
+
+    local left_up_panel = panel:getChildByName("left_up")
+    if(left_up_panel) then 
+        left_up_panel:setAnchorPoint(cc.p(0,1))
+        left_up_panel:setScale(platform_scale)
+        left_up_panel:setPosition(cc.p(0,winSize.height)) 
+    end
+
+    local right_up_panel = panel:getChildByName("right_up")
+    if(right_up_panel) then 
+        right_up_panel:setAnchorPoint(cc.p(1,1))
+        right_up_panel:setScale(platform_scale)
+        right_up_panel:setPosition(cc.p(winSize.width,winSize.height)) 
     end
 end
 

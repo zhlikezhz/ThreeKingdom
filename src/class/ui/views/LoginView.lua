@@ -15,9 +15,10 @@ function LoginView:_init()
 end
 
 function LoginView:_onLoginBtn()
-	UserData.init()
-	MajorCityLayer.init()
-	MajorCityLayer.enter()
+	local scene = cc.Director:getInstance():getRunningScene()
+	local view = require("class.ui.views.FightView").new()
+	scene:addChild(view)
+	self:close()
 end
 
 return LoginView

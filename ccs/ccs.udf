@@ -32,8 +32,10 @@
         <OpenedDocuments>
           <FilePathData Path="LoginLayer/LoginLayer.csd" />
           <FilePathData Path="TestScene.csd" />
+          <FilePathData Path="MajorCityLayer/MajorCityLayer.csd" />
+          <FilePathData Path="FightLayer/FightLayer.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="TestScene.csd" />
+        <ActiveDocument Path="FightLayer/FightLayer.csd" />
       </Value>
     </Item>
   </Properties>

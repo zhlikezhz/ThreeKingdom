@@ -15,6 +15,17 @@
           <Image Name="start_9.png" />
         </Folder>
         <Project Name="TestScene.csd" Type="Scene" />
+        <Folder Name="MajorCityLayer">
+          <Project Name="MajorCityLayer.csd" Type="Layer" />
+        </Folder>
+        <Folder Name="FightLayer">
+          <Project Name="FightLayer.csd" Type="Layer" />
+          <Image Name="ui_fight_1.png" />
+          <Image Name="ui_fight_4.png" />
+          <Image Name="ui_fight_5.png" />
+          <Image Name="ui_fight_6.png" />
+          <Image Name="ui_fight_7.png" />
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

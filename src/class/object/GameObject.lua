@@ -1,5 +1,7 @@
 local GameObject = class("GameObject")
 
-local GamaObject:ctor()
+function GamaObject:ctor()
 
 end
+
+end GameObject

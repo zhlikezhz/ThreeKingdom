@@ -1,4 +1,4 @@
-local app = {}
+app = {}
 app.debugFlag = true
 
 app.getDebugFlag = function()
@@ -8,5 +8,3 @@ end
 app.setDebugFlag = function(flag)
 	app.debugFlag = flag
 end
-
-return app
