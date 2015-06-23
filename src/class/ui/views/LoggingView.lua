@@ -1,6 +1,4 @@
-local LoggingView = class("LoggingView", function()
-	return require("class.ui.views.BaseView").new()
-end)
+local LoggingView = class("LoggingView", require("class.ui.views.BaseView"))
 
 function LoggingView:ctor()
 	self:_init()

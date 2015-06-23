@@ -1,5 +1,5 @@
 
-local scheduler = require("quick.scheduler")
+local scheduler = require("extend.scheduler")
 
 --[[--
 

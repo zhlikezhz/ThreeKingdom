@@ -1,6 +1,4 @@
-local BaseView = class("BaseView", function()
-	return ccui.Widget:create()
-end)
+local BaseView = class("BaseView", ccui.Widget)
 
 function BaseView:ctor()
 	self:registerScriptHandler(function(state)

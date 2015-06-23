@@ -28,11 +28,11 @@ commfunc.readCCSFile = function(filename, csbCacheFlag)
     local filetype = commfunc.splitString(filename, "%.")
 
     if(filetype[2] == "csb")then
-        -- if csbCacheFlag then
-        --     node = CCSTemplateCache:getInstance():create(filename)
-        -- else
+        if csbCacheFlag then
+            node = CCSTemplateCache:getInstance():create(filename)
+        else
             node = cc.CSLoader:createNode(filename)
-        -- end
+        end
     elseif(filetype[2] == "json") then
         node = ccs.GUIReader:getInstance():widgetFromJsonFile(filename)
     else
@@ -53,9 +53,41 @@ commfunc.loadCCSFile = function(filename, nodeMapList)
             node = node:getChildByName(name)
             assert(node ~= nil, string.format("error : ccs map name %s", name))
         end
+        -- commfunc.uiExtend(node)
         view[key] = node
     end
     return view
+end
+
+commfunc.uiExtend = function(widget)
+    local desc = widget:getDescription()
+    local WidgetEx = require("extend.ui.WidgetEx")
+
+    if(desc == "Widget")then
+        for i,v in pairs(WidgetEx) do
+            widget[i] = v
+        end
+    elseif(desc == "Button")then
+        for i,v in pairs(WidgetEx) do
+            widget[i] = v
+        end
+    elseif(desc == "ImageView")then
+        for i,v in pairs(WidgetEx) do
+            widget[i] = v
+        end
+    elseif(desc == "Layout")then
+        for i,v in pairs(WidgetEx) do
+            widget[i] = v
+        end
+    elseif(desc == "Label" or desc == "Text")then
+        for i,v in pairs(WidgetEx) do
+            widget[i] = v
+        end
+    elseif(desc == "ScrollView")then
+        for i,v in pairs(WidgetEx) do
+            widget[i] = v
+        end
+    end
 end
 
 return CommonFunction

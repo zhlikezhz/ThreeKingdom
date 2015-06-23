@@ -27,5 +27,14 @@
         <LastRunType Value="Unknown" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="LoginLayer/LoginLayer.csd" />
+          <FilePathData Path="TestScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="TestScene.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>
