@@ -1,5 +1,4 @@
---========================================================================
-function setmetauserdata(t, index)
+function setmetaclass(t, index)
     if type(t) == "userdata" then
         local peer = tolua.getpeer(t)
         if not peer then
@@ -42,7 +41,7 @@ function class(name, super)
 				if c[".isclass"] then
 					obj = c:create()
 				elseif c.ctor then
-					setmetauserdata(obj, c)
+					setmetaclass(obj, c)
 					c.ctor(obj, ...)
 				end
 			end
@@ -50,7 +49,7 @@ function class(name, super)
 			create(class_type, ...)
 		end
 
-		setmetauserdata(obj, class_type)
+		setmetaclass(obj, class_type)
 		return obj
 	end
 	return class_type
