@@ -11,8 +11,6 @@ local function main()
 
 	local layer = require("class.ui.views.LoginView").new()
 	scene:addChild(layer, 10)
-
-	printLog("!@#")
 end
 
 local function __G__TRACKBACK__(msg)
