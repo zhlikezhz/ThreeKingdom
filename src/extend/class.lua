@@ -5,7 +5,7 @@ function setmetaclass(t, index)
             peer = {}
             tolua.setpeer(t, peer)
         end
-        setmetauserdata(peer, index)
+        setmetaclass(peer, index)
     else
         local mt = getmetatable(t)
         if not mt then mt = {} end
