@@ -36,7 +36,11 @@ end
 
 function CCBView:setData(data)
 	self.data = data
-	self.refreshView()
+	if self.data.refreshView then
+		self.data.refreshView(self.ccbiTable)
+	else
+		self:refreshView()
+	end
 end
 
 function CCBView:setEvent(events)
@@ -50,11 +54,12 @@ function CCBView:handleEvent(evtName)
 	for _, event in pairs(self.eventArray) do
 		if(event.name == evtName)  then
 			event.callback(self.data)
-			self.refreshView()
 		end
 	end
 end
 
+--refreshview由自己定义，自由度更大。
+--refreshView采用默认的方式，需要将data中的数据映射到cocos2dx的空间中去
 function CCBView:refreshView()
 
 end
