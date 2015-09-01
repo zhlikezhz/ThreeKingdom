@@ -16,4 +16,8 @@ function UIMgr:pop()
 
 end
 
+function UIMgr:replace()
+	
+end
+
 return UIMgr
