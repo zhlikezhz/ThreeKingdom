@@ -1,7 +1,0 @@
--- require("extend.functions")
-device = require("extend.device")
-display = require("extend.display")
-commfunc = require("extend.CommonFunction")
-require("extend.Timer")
-require("extend.ui.WidgetEx")
-require("extend.class")

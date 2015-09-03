@@ -3,14 +3,10 @@ cc.FileUtils:getInstance():addSearchPath("src/")
 cc.FileUtils:getInstance():addSearchPath("res/")
 cc.FileUtils:getInstance():addSearchPath("res/images/views")
 
-require "init"
 
 local function main()
 	local scene = cc.Scene:create()
 	cc.Director:getInstance():runWithScene(scene)
-
-	local layer = require("class.ui.views.LoginView").new()
-	scene:addChild(layer, 10)
 end
 
 local function __G__TRACKBACK__(msg)
